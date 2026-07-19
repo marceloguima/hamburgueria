@@ -1,0 +1,141 @@
+[
+    {
+        "id": "burg-cheeseburger",
+        "nome": "Cheeseburger Clássico",
+        "descricao": "Pão brioche macio, hambúrguer artesanal de 160g, duplo queijo prato derretido e maionese especial da casa.",
+        "preco": 22.0,
+        "imagem": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?fm=jpg&q=80&w=800&auto=format&fit=crop",
+        "categoria": "hamburgueres"
+    },
+    {
+        "id": "burg-bacon",
+        "nome": "Bacon Burger",
+        "descricao": "Pão brioche, hambúrguer 160g, queijo cheddar, fatias generosas de bacon crocante, cebola caramelizada e molho barbecue.",
+        "preco": 28.0,
+        "imagem": "https://images.unsplash.com/photo-1553979459-d2229ba7433b?fm=jpg&q=80&w=800&auto=format&fit=crop",
+        "categoria": "hamburgueres"
+    },
+    {
+        "id": "burg-duplo",
+        "nome": "Double Monster",
+        "descricao": "Para os famintos: Pão brioche, dois hambúrgueres de 160g, muito cheddar derretido, bacon e maionese de bacon.",
+        "preco": 35.0,
+        "imagem": "https://images.unsplash.com/photo-1586190848861-99aa4a171e90?fm=jpg&q=80&w=800&auto=format&fit=crop",
+        "categoria": "hamburgueres"
+    },
+    {
+        "id": "burg-salada",
+        "nome": "X-Salada Premium",
+        "descricao": "Pão com gergelim, hambúrguer 160g, queijo prato, alface americana, tomate fresco, picles e maionese de ervas.",
+        "preco": 24.0,
+        "imagem": "https://images.unsplash.com/photo-1550547660-d9450f859349?fm=jpg&q=80&w=800&auto=format&fit=crop",
+        "categoria": "hamburgueres"
+    },
+    {
+        "id": "burg-frango",
+        "nome": "Crispy Chicken",
+        "descricao": "Pão brioche, suculento peito de frango empanado e crocante, queijo prato, alface americana e maionese de alho.",
+        "preco": 25.0,
+        "imagem": "https://images.unsplash.com/photo-1615719413546-198b25453f85?fm=jpg&q=80&w=800&auto=format&fit=crop",
+        "categoria": "hamburgueres"
+    },
+
+    {
+        "id": "beb-refri-cola",
+        "nome": "Refrigerante de Cola (Lata)",
+        "descricao": "Refrigerante sabor cola tradicional, lata 350ml. Gelado e perfeito para acompanhar seu hambúrguer.",
+        "preco": 6.5,
+        "imagem": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?fm=jpg&q=80&w=800&auto=format&fit=crop",
+        "categoria": "bebidas"
+    },
+    {
+        "id": "beb-refri-guarana",
+        "nome": "Refrigerante de Guaraná (Lata)",
+        "descricao": "Refrigerante sabor guaraná, lata 350ml. O clássico que não pode faltar.",
+        "preco": 6.0,
+        "imagem": "https://images.unsplash.com/photo-1625772299848-391b6a87d7b3?fm=jpg&q=80&w=800&auto=format&fit=crop",
+        "categoria": "bebidas"
+    },
+    {
+        "id": "beb-suco-laranja",
+        "nome": "Suco de Laranja Natural",
+        "descricao": "Suco de laranja natural, espremido na hora. Copo de 400ml.",
+        "preco": 9.0,
+        "imagem": "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?fm=jpg&q=80&w=800&auto=format&fit=crop",
+        "categoria": "bebidas"
+    },
+    {
+        "id": "beb-milkshake-morango",
+        "nome": "Milkshake de Morango",
+        "descricao": "Sorvete de morango batido com leite, calda de morango e chantilly. Copo 400ml.",
+        "preco": 15.0,
+        "imagem": "https://images.unsplash.com/photo-1572490122747-3968b75bb699?fm=jpg&q=80&w=800&auto=format&fit=crop",
+        "categoria": "bebidas"
+    },
+
+    {
+        "id": "acomp-fritas",
+        "nome": "Batata Frita Tradicional",
+        "descricao": "Porção individual de batatas fritas, sequinhas e crocantes. Acompanha maionese da casa.",
+        "preco": 12.0,
+        "imagem": "https://images.unsplash.com/photo-1576107232684-1279f390859f?fm=jpg&q=80&w=800&auto=format&fit=crop",
+        "categoria": "acompanhamentos"
+    },
+    {
+        "id": "acomp-fritas-cheddar",
+        "nome": "Fritas com Cheddar e Bacon",
+        "descricao": "Nossas batatas crocantes cobertas com muito creme de cheddar e cubos de bacon.",
+        "preco": 18.0,
+        "imagem": "https://images.unsplash.com/photo-1534080564583-6be75777b70a?fm=jpg&q=80&w=800&auto=format&fit=crop",
+        "categoria": "acompanhamentos"
+    },
+    {
+        "id": "acomp-onion-rings",
+        "nome": "Onion Rings",
+        "descricao": "Anéis de cebola empanados e fritos, super crocantes. Acompanha molho barbecue.",
+        "preco": 14.0,
+        "imagem": "https://images.unsplash.com/photo-1639024471283-03518883512d?fm=jpg&q=80&w=800&auto=format&fit=crop",
+        "categoria": "acompanhamentos"
+    },
+    {
+        "id": "acomp-nuggets",
+        "nome": "Nuggets de Frango",
+        "descricao": "Porção com 8 unidades de nuggets de frango crocantes. Acompanha molho à sua escolha.",
+        "preco": 15.0,
+        "imagem": "https://images.unsplash.com/photo-1562967914-608f82629710?fm=jpg&q=80&w=800&auto=format&fit=crop",
+        "categoria": "acompanhamentos"
+    },
+
+    {
+        "id": "combo-classico",
+        "nome": "Combo Clássico",
+        "descricao": "1 Cheeseburger Clássico + Batata Frita Tradicional (P) + Refrigerante de Cola (Lata).",
+        "preco": 35.0,
+        "imagem": "https://images.unsplash.com/photo-1594212691516-436fba26fb28?fm=jpg&q=80&w=800&auto=format&fit=crop",
+        "categoria": "combos"
+    },
+    {
+        "id": "combo-bacon",
+        "nome": "Combo Bacon Lover",
+        "descricao": "1 Bacon Burger + Fritas com Cheddar e Bacon (P) + Refrigerante de Guaraná (Lata).",
+        "preco": 46.0,
+        "imagem": "https://images.unsplash.com/photo-1610440042657-612c34d95e9f?fm=jpg&q=80&w=800&auto=format&fit=crop",
+        "categoria": "combos"
+    },
+    {
+        "id": "combo-frango",
+        "nome": "Combo Crispy",
+        "descricao": "1 Crispy Chicken + Onion Rings (P) + Suco de Laranja.",
+        "preco": 42.0,
+        "imagem": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?fm=jpg&q=80&w=800&auto=format&fit=crop",
+        "categoria": "combos"
+    },
+    {
+        "id": "combo-casal",
+        "nome": "Combo Casal",
+        "descricao": "2 X-Salada Premium + 1 Batata Frita Grande + 2 Refrigerantes (Lata).",
+        "preco": 68.0,
+        "imagem": "https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?fm=jpg&q=80&w=800&auto=format&fit=crop",
+        "categoria": "combos"
+    }
+]

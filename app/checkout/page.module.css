@@ -1,0 +1,214 @@
+.tela {
+  min-height: 100vh;
+  padding-bottom: var(--espaco-lg);
+}
+
+.cabecalho {
+  display: flex;
+  align-items: center;
+  gap: var(--espaco-sm);
+  padding: var(--espaco-sm) var(--espaco-md);
+  background-color: var(--cor-fundo-card);
+}
+
+.botaoVoltar {
+  color: var(--cor-texto-claro);
+  font-size: 1.3rem;
+  text-decoration: none;
+}
+
+.titulo {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* --- Formulário --- */
+.formulario {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-md);
+  padding: var(--espaco-md);
+}
+
+.grupo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-xs);
+  border: none;
+}
+
+.rotulo {
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: var(--cor-texto-secundario);
+  margin-bottom: 8px;
+}
+
+.opcionalTexto {
+  font-weight: normal;
+  color: var(--cor-texto-secundario);
+}
+
+/* --- Opções de pagamento --- */
+.opcoesPagamento {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-xs);
+}
+
+.avisoCampoValido{
+  position: absolute;
+  color: #ff0000;
+  top: 250px;
+
+  
+}
+
+.avisoFormaPagValido{
+  position: absolute;
+  top: 433px;
+
+  color: #ff0000;
+ 
+
+}
+
+.botaoPagamento {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  gap: var(--espaco-xs);
+  background-color: var(--cor-fundo-card);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-botao);
+  padding: var(--espaco-sm);
+  color: var(--cor-texto-claro);
+  font-size: 0.95rem;
+  cursor: pointer;
+  text-align: left;
+}
+
+.botaoPagamentoAtivo {
+  border-color: var(--cor-primaria);
+  background-color: rgba(255, 107, 26, 0.1);
+  font-weight: bold;
+}
+
+
+.blocoPix {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-xs);
+  background-color: var(--cor-fundo-card);
+  border: 1px solid var(--cor-borda);
+  border-radius: 10px;
+  padding: var(--espaco-sm);
+  margin-top: var(--espaco-xs);
+}
+
+.rotuloChavePix {
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: var(--cor-texto-secundario);
+}
+
+.linhaPix {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--espaco-sm);
+}
+
+.chavePix {
+  font-size: 0.9rem;
+  color: var(--cor-texto-claro);
+  word-break: break-all; /* evita chave longa estourar a tela */
+}
+
+.botaoCopiarPix {
+  flex-shrink: 0;
+  background-color: var(--cor-primaria);
+  color: var(--cor-texto-botao);
+  font-weight: bold;
+  font-size: 0.8rem;
+  border: none;
+  border-radius: var(--raio-botao);
+  padding: var(--espaco-xs) var(--espaco-sm);
+  cursor: pointer;
+}
+
+.passosPix {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: var(--espaco-xs);
+}
+
+.passoPix {
+  font-size: 0.75rem;
+  color: var(--cor-texto-secundario);
+}
+
+.passoPix strong {
+  color: var(--cor-primaria);
+}
+
+/* --- Resumo e botão final --- */
+.resumo {
+  position: sticky;
+  bottom: 0;
+  background-color: var(--cor-fundo-card);
+  border-top: 1px solid var(--cor-borda);
+  padding: var(--espaco-sm) var(--espaco-md);
+  margin-top: var(--espaco-md);
+}
+
+.linhaResumo {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1rem;
+  margin-bottom: var(--espaco-sm);
+}
+
+.linhaResumo strong {
+  color: var(--cor-primaria);
+  font-size: 1.2rem;
+}
+
+.botaoFinalizar {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: #25d366; /* verde do WhatsApp, reconhecível na hora */
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: var(--raio-botao);
+  padding: var(--espaco-xs);
+}
+
+.botaoFinalizarDesabilitado {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  height: 40px;
+  width: 100%;
+  text-align: center;
+  background-color: #25d366;
+  color: #fff;
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-botao);
+  padding: var(--espaco-xs);
+  cursor: not-allowed;
+}
+
+@media (min-width: 768px) {
+  .tela {
+    max-width: 480px;
+    margin: 0 auto;
+  }
+}

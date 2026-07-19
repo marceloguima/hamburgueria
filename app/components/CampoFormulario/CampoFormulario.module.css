@@ -1,0 +1,76 @@
+.grupo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-xs);
+}
+
+.rotulo {
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: var(--cor-texto-secundario);
+}
+
+.campo {
+  width: 100%;
+  min-height: 40px;
+  background-color: var(--cor-fundo-card);
+  border: 1px solid var(--cor-borda);
+  border-radius: 10px;
+  padding: var(--espaco-xs);
+  color: var(--cor-texto-claro);
+  box-shadow: var(--sombra-padrao);
+  font: inherit;
+}
+
+.campo::placeholder {
+  color: var(--cor-texto-secundario);
+  opacity: 1;
+}
+
+.campo:focus {
+  outline: none;
+  border-color: var(--cor-primaria);
+  box-shadow: 0 0 0 3px rgba(255, 107, 26, 0.15);
+}
+
+.textarea {
+  min-height: 60px;
+  resize: vertical;
+}
+
+/* --- Campo com ícone --- */
+
+/* Container que agrupa ícone + input.
+   position: relative é o que permite o ícone (position: absolute
+   lá embaixo) se posicionar EM RELAÇÃO a essa div, e não à página
+   inteira. */
+.campoComIcone {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* O ícone fica "flutuando" por cima do campo, grudado à esquerda,
+   verticalmente centralizado. pointer-events: none garante que
+   clicar em cima do ícone clique no input por baixo, não no ícone. */
+.icone {
+  position: absolute;
+  left: var(--espaco-xs);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cor-texto-secundario);
+  pointer-events: none;
+}
+
+/* Quando tem ícone, o input precisa de um respiro à esquerda
+   pra o texto digitado não começar exatamente embaixo do ícone. */
+.campoComEspacoIcone {
+  padding-left: 2.25rem;
+}
+
+/* Se o campo com ícone estiver em foco, o ícone acompanha a cor
+   de destaque — reforça visualmente que aquele campo é o ativo. */
+.campoComIcone:focus-within .icone {
+  color: var(--cor-primaria);
+}

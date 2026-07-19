@@ -1,0 +1,327 @@
+/* Mobile first: tudo aqui é pensado pra tela pequena por padrão */
+
+.tela {
+  min-height: 100vh;
+  padding-bottom: 90px; /* espaço pra barra fixa do carrinho não cobrir conteúdo */
+}
+
+/* --- Cabeçalho --- */
+.cabecalho {
+  padding: var(--espaco-sm) var(--espaco-md);
+  background-color: var(--cor-fundo-card);
+}
+
+.cabecalhoTopo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--espaco-sm);
+}
+
+/* --- Ícone do carrinho no cabeçalho --- */
+.iconeCarrinho {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: #fff;
+}
+
+.badgeCarrinho {
+  position: absolute;
+  top: -4px;
+  right: -6px;
+  background-color: var(--cor-primaria);
+  color: var(--cor-texto-botao);
+  font-size: 0.65rem;
+  font-weight: bold;
+  min-width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+}
+
+.botaoIcone {
+  background: none;
+  border: none;
+  color: var(--cor-texto-claro);
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+/* --- Hero com imagem de fundo e título sobreposto --- */
+.hero {
+  position: relative;
+  min-height: 160px;
+  border-radius: var(--raio-card);
+  margin-top: var(--espaco-sm);
+  margin-bottom: var(--espaco-sm);
+  padding: var(--espaco-sm);
+  display: flex;
+  align-items: flex-end; /* título encostado embaixo da imagem */
+
+  background-image: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.85) 10%,
+      rgba(0, 0, 0, 0.15) 70%
+    ),
+    url('/hero-cardapio.png'); /* troque pela foto de cada vendedor */
+  background-size: cover;
+  background-position: center;
+}
+
+.tituloHero {
+  color: #ffffff96;
+  font-size: 1.2rem;
+  font-weight: 900;
+  line-height: 1.2;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4); /* garante legibilidade em qualquer foto */
+}
+
+@media (min-width: 768px) {
+  .hero {
+    min-height: 180px;
+  }
+
+  .tituloHero {
+    font-size: 1.6rem;
+  }
+}
+
+.tituloDestaque {
+  color: var(--cor-primaria);
+}
+
+.subtitulo {
+  color: var(--cor-texto-secundario);
+  font-size: var(--tamanho-texto);
+  margin: var(--espaco-xs) 0;
+}
+
+.seloEntrega {
+  width: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-botao);
+  padding: var(--espaco-xs) var(--espaco-sm);
+  font-size: 0.8rem;
+  color: var(--cor-texto-secundario);
+  margin-top: var(--espaco-xs);
+}
+
+/* --- Filtros de categoria (pills roláveis) --- */
+.filtros {
+  display: flex;
+  gap: var(--espaco-xs);
+  padding: var(--espaco-sm) var(--espaco-md);
+  overflow-x: auto; /* rola horizontalmente se não couber */
+  scrollbar-width: none; /* esconde a barra de rolagem (Firefox) */
+}
+
+.filtros::-webkit-scrollbar {
+  display: none; /* esconde a barra de rolagem (Chrome/Safari) */
+}
+
+.pillFiltro {
+  flex-shrink: 0; /* impede que os pills espremam no flex */
+  background-color: var(--cor-fundo-card);
+  border: 1px solid var(--cor-borda);
+  color: var(--cor-texto-claro);
+  border-radius: var(--raio-botao);
+  padding: var(--espaco-xs) var(--espaco-xs);
+  font-size: 0.85rem;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.pillFiltroAtivo {
+  background-color: var(--cor-primaria);
+  color: var(--cor-texto-botao);
+  border-color: var(--cor-primaria);
+  font-weight: bold;
+}
+
+/* --- Lista de itens --- */
+.listaItens {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--espaco-sm);
+  padding: 0 var(--espaco-md);
+}
+
+.listaVazia {
+  color: var(--cor-texto-secundario);
+  text-align: center;
+  padding: var(--espaco-lg) 0;
+}
+
+.cardItem {
+  display: flex;
+  width: 100%;
+  gap: var(--espaco-sm);
+  background-color: var(--cor-fundo-card);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-card);
+  padding: var(--espaco-sm);
+}
+
+.imagemItem {
+  width: 100px;
+  height: 100px;
+  object-fit: cover; /* preenche o espaço sem distorcer a foto */
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+.infoItem {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0; /* evita que o texto empurre o card pra fora da tela */
+}
+
+.nomeItem {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.descricaoItem {
+  font-size: 0.8rem;
+  color: var(--cor-texto-secundario);
+  margin: var(--espaco-xs) 0;
+  /* limita a descrição a 2 linhas, com "..." se passar disso */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.rodapeItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto; /* empurra pro final do card */
+}
+
+.precoItem {
+  color: var(--cor-primaria);
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.botaoAdicionar {
+  width: 100px;
+  height: 32px;
+  border-radius: 20px;
+  border: none;
+  background-color: var(--cor-primaria);
+  color: var(--cor-texto-botao);
+  font-size: .9rem;
+  font-weight: bold;
+  cursor: pointer; 
+}
+
+.stepper {
+  display: flex;
+  align-items: center;
+  gap: var(--espaco-xs);
+}
+
+.botaoStepper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--cor-primaria);
+  color: var(--cor-texto-botao);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.quantidadeStepper {
+  min-width: 16px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* --- Barra fixa do carrinho --- */
+.barraCarrinho {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1a1a1a;
+  border-top: 1px solid var(--cor-borda);
+  padding: var(--espaco-sm) var(--espaco-md);
+}
+
+.resumoCarrinho {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.8rem;
+  color: var(--cor-texto-secundario);
+}
+
+.resumoCarrinho strong {
+  color: var(--cor-texto-claro);
+  font-size: 1rem;
+}
+
+.botaoVerCarrinho {
+  background-color: var(--cor-primaria);
+  color: #000;
+  border: none;
+  border-radius: var(--raio-botao);
+  padding: var(--espaco-xs) var(--espaco-md);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.linkFooterCarrinho{
+  width: 100%;
+  position: relative;
+ display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--espaco-xs);
+  background-color: var(--cor-primaria);
+  color: #000;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-decoration: none;
+  border: none;
+  border-radius: var(--raio-botao);
+  padding: var(--espaco-sm) var(--espaco-md);
+  margin: var(--espaco-lg) var(--espaco-md) var(--espaco-md);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+/* --- Ajuste pra telas maiores --- */
+@media (min-width: 768px) {
+  .tela {
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .cardItem {
+    padding: var(--espaco-md);
+  }
+}

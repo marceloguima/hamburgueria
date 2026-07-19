@@ -1,0 +1,19 @@
+.botaoLink {
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--espaco-xs);
+    background-color: var(--cor-primaria);
+    color: var(--cor-texto-botao);
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-decoration: none;
+    border: none;
+    border-radius: var(--raio-botao);
+    padding: var(--espaco-sm) var(--espaco-md);
+    margin: var(--espaco-lg) var(--espaco-md) var(--espaco-md);
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}

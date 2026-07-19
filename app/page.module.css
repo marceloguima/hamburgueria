@@ -1,0 +1,211 @@
+/* ==========================================
+   ESTILOS DA TELA INICIAL
+   Mobile first: estilo base é pro celular,
+   e usamos @media só se precisar ajustar
+   pra telas maiores (tablet/desktop).
+   ========================================== */
+
+.tela {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--cor-fundo);
+  padding: var(--espaco-sm);
+}
+
+/* --- Cabeçalho com logo e selo de entrega --- */
+.cabecalho {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--espaco-sm);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--espaco-xs);
+  font-weight: bold;
+  font-size: 1.1rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+  line-height: 1.1;
+}
+
+.logoDestaque {
+  color: var(--cor-primaria);
+}
+
+
+.seloEntrega strong {
+  color: var(--cor-primaria);
+}
+
+/* --- Área principal com imagem de fundo --- */
+.heroImagem {
+  width: 100%;
+  position: relative;
+  padding: var(--espaco-md);
+  background-image: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.932) 10%,
+      rgba(0, 0, 0, 0.288) 60%
+    ),
+    url('/hero-cardapio.png'); /* troque pela foto real do vendedor */
+  background-size: cover;
+  background-position: center;
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  border-radius: var(--raio-card);
+  margin-bottom: 20px;
+}
+
+.titulo {
+  color: var(--cor-texto-botao);
+  font-size: var(--tamanho-titulo);
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 1.15;
+  margin-bottom: var(--espaco-xs);
+}
+
+.tituloDestaque {
+  color: var(--cor-primaria);
+}
+
+.linhaDestaque {
+  width: 60px;
+  height: 3px;
+  background-color: var(--cor-primaria);
+  margin-bottom: var(--espaco-sm);
+  border: none;
+}
+
+.descricao {
+  font-size: var(--tamanho-subtitulo);
+  color: var(--cor-texto-secundario);
+  margin-bottom: var(--espaco-xs);
+  max-width: 32ch; /* evita linha muito longa em telas largas */
+}
+
+.descricao strong {
+  color: var(--cor-primaria);
+  font-weight: normal;
+}
+
+/* --- Bloco de avaliações/confiança --- */
+.blocoConfianca {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  background-color: var(--cor-fundo-card);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-card);
+  padding: var(--espaco-sm);
+  margin: 0 var(--espaco-md);
+  margin-top: -1px; /* encosta na imagem acima */
+}
+
+.itemConfianca {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.itemConfianca strong {
+  font-size: 1rem;
+}
+
+.itemConfianca span {
+  color: var(--cor-texto-secundario);
+  font-size: 0.7rem;
+}
+
+/* --- Card de destaque dos combos --- */
+.cardCombo {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--cor-fundo-card);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-card);
+  padding: var(--espaco-sm);
+  margin: var(--espaco-sm) var(--espaco-md) 0;
+}
+
+.cardComboTexto strong {
+  color: var(--cor-primaria);
+}
+
+.cardComboTexto p {
+  font-size: 0.8rem;
+  color: var(--cor-texto-secundario);
+  margin-top: 2px;
+}
+
+/* --- Botão principal (CTA) --- */
+.botaoPrincipal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--espaco-xs);
+  background-color: var(--cor-primaria);
+  color: #000;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  border: none;
+  border-radius: var(--raio-botao);
+  padding: var(--espaco-sm) var(--espaco-md);
+  margin: var(--espaco-lg) var(--espaco-md) var(--espaco-md);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.botaoPrincipal:hover,
+.botaoPrincipal:active {
+  background-color: var(--cor-primaria-escura);
+}
+
+/* --- Rodapé com ícones de destaque --- */
+.rodapeDestaques {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding: 0 var(--espaco-xs) var(--espaco-md);
+  text-align: center;
+}
+
+.rodapeItem {
+  font-size: 0.75rem;
+  color: var(--cor-texto-secundario);
+}
+
+.rodapeSelo {
+  text-align: center;
+  font-size: 0.7rem;
+  color: var(--cor-texto-secundario);
+  padding-bottom: var(--espaco-md);
+}
+
+/* --- Ajustes pra telas maiores (tablet/desktop) ---
+   Mobile first: aqui só ampliamos o que precisa,
+   sem reescrever o layout inteiro. */
+@media (min-width: 768px) {
+  .tela {
+    max-width: 480px; /* mantém formato de "celular" mesmo em tela grande */
+    margin: 0 auto;
+  }
+
+  .titulo {
+    font-size: 2.6rem;
+  }
+}
