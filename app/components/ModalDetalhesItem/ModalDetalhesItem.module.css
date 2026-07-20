@@ -1,0 +1,135 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: flex-end; /* mobile first: modal "sobe" de baixo, tipo bottom sheet */
+  justify-content: center;
+  z-index: 1000;
+}
+
+.caixa {
+  position: relative;
+  margin-bottom: 100px;
+  width: 95%;
+  max-height: 85vh;
+  overflow-y: auto;
+  background-color: var(--cor-fundo-card);
+  border-radius: var(--raio-card);
+  box-shadow: var(--sombra-padrao);
+}
+
+.botaoFechar {
+  position: absolute;
+  top: var(--espaco-sm);
+  right: var(--espaco-sm);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.imagem {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.conteudo {
+  padding: var(--espaco-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-xs);
+}
+
+.nome {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.descricao {
+  font-size: 0.9rem;
+  color: var(--cor-texto-secundario);
+}
+
+.blocoIngredientes {
+  margin-top: var(--espaco-xs);
+  padding-top: var(--espaco-sm);
+  border-top: 1px solid var(--cor-borda);
+}
+
+.rotuloIngredientes {
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: var(--cor-texto-secundario);
+}
+
+.listaIngredientes {
+  margin-top: var(--espaco-xs);
+  padding-left: var(--espaco-md);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.9rem;
+}
+
+.preco {
+  margin-top: var(--espaco-sm);
+  color: var(--cor-primaria);
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+
+.rodape {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: var(--espaco-sm);
+}
+
+.stepper {
+  display: flex;
+  align-items: center;
+  gap: var(--espaco-xs);
+}
+
+.botaoStepper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--cor-primaria);
+  color: var(--cor-texto-botao);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.quantidadeStepper {
+  min-width: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+
+/* Em telas maiores, o modal vira centralizado em vez de bottom sheet */
+@media (min-width: 768px) {
+  .overlay {
+    align-items: center;
+  }
+
+  .caixa {
+    max-width: 420px;
+    border-radius: var(--raio-card);
+  }
+}

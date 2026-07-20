@@ -220,17 +220,6 @@
   font-size: 1.1rem;
 }
 
-.botaoAdicionar {
-  width: 100px;
-  height: 32px;
-  border-radius: 20px;
-  border: none;
-  background-color: var(--cor-primaria);
-  color: var(--cor-texto-botao);
-  font-size: .9rem;
-  font-weight: bold;
-  cursor: pointer; 
-}
 
 .stepper {
   display: flex;

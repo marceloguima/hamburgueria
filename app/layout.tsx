@@ -3,8 +3,8 @@ import './globals.css';
 import { CarrinhoProvider } from '../app/context/CarrinhoContext';
 
 export const metadata: Metadata = {
-  title: 'Espetinho do João',
-  description: 'Peça seu espetinho sem sair de casa',
+  title: 'Hamburgueria top 10',
+  description: 'Peça seu hamburguer sem sair de casa',
 };
 
 export default function RootLayout({

@@ -122,19 +122,19 @@ export default function Checkout() {
             .join("\n");
 
         const mensagem = `
-🍢 *Novo pedido — Espetinho do João*
+🍢 *Novo pedido*
 
 ${linhasItens}
 
 *Total: R$ ${totalPreco.toFixed(2).replace(".", ",")}*
 
-👤 *Cliente:* ${dados.nome}
-📞 *Telefone:* ${dados.telefone}
-📍 *Endereço:* ${dados.endereco}
-💰 *Pagamento:* ${rotuloPagamento(dados.formaPagamento)}
-${dados.formaPagamento === "dinheiro" ? "💰 *Troco:* Troco para " + dados.troco + " reais" : ""}
-${dados.formaPagamento === "pix" ? "🔑 *Pix:* pagamento via chave " + CHAVE_PIX : ""}
-${dados.observacao.trim() !== "" ? `📝 *Observação:* ${dados.observacao}` : ""}
+ *Cliente:* ${dados.nome}
+ *Telefone:* ${dados.telefone}
+ *Endereço:* ${dados.endereco}
+ *Pagamento:* ${rotuloPagamento(dados.formaPagamento)}
+${dados.formaPagamento === "dinheiro" ? " *Troco:* Troco para " + dados.troco + " reais" : ""}
+${dados.formaPagamento === "pix" ? " *Pix:* pagamento via chave " + CHAVE_PIX : ""}
+${dados.observacao.trim() !== "" ? ` *Observação:* ${dados.observacao}` : ""}
 `.trim();
 
         return mensagem;

@@ -5,6 +5,8 @@ import Link from "next/link";
 import styles from "./page.module.css";
 import { Input } from "../components/CampoFormulario/CampoFormulario";
 import BotaoLink from "../components/BotaoLinkPrincipal/BotaoLink";
+import ModalDetalhesItem from "../components/ModalDetalhesItem/ModalDetalhesItem";
+import BotaoAdicionar from "../components/BotaoAdicionar/BotaoAdd";
 
 // Ícones lucide
 import { Plus, Minus, Search, Menu } from "lucide-react";
@@ -46,6 +48,11 @@ export default function Cardapio() {
 
     // Termo digitado no campo de busca.
     const [termoBusca, setTermoBusca] = useState("");
+
+    // Guarda o ITEM clicado (não só o id) — mais simples aqui já que
+    // não precisamos "re-buscar" no array depois, o próprio objeto já
+    // vem completo do .map() da lista.
+    const [itemDetalhe, setItemDetalhe] = useState<ItemCardapio | null>(null);
 
     const { carrinho, adicionarItem, removerItem, totalItens } = useCarrinho();
 
@@ -164,7 +171,25 @@ export default function Cardapio() {
                     const quantidade = carrinho[item.id] ?? 0;
 
                     return (
-                        <article key={item.id} className={styles.cardItem}>
+                        <article
+                            key={item.id}
+                            className={styles.cardItem}
+                            onClick={() => {
+                                if (
+                                    item.ingredientes &&
+                                    item.ingredientes.length > 0
+                                ) {
+                                    setItemDetalhe(item);
+                                }
+                            }}
+                            style={{
+                                cursor:
+                                    item.ingredientes &&
+                                    item.ingredientes.length > 0
+                                        ? "pointer"
+                                        : "default",
+                            }}
+                        >
                             {/* eslint-disable-next-line @next/next/no-img-element */}
                             <img
                                 src={item.imagem}
@@ -187,22 +212,30 @@ export default function Cardapio() {
                                     </span>
 
                                     {quantidade === 0 ? (
-                                        <button
-                                            className={styles.botaoAdicionar}
-                                            onClick={() =>
-                                                adicionarItem(item.id)
-                                            }
-                                            aria-label={`Adicionar ${item.nome}`}
-                                        >
-                                            Adicionar
-                                        </button>
+                                        // <button
+                                        //     className={styles.botaoAdicionar}
+                                        //     onClick={(e) => {
+                                        //         e.stopPropagation();
+                                        //         adicionarItem(item.id);
+                                        //     }}
+                                        //     aria-label={`Adicionar ${item.nome}`}
+                                        // >
+                                        //     Adicionar
+                                        // </button>
+
+                                        <BotaoAdicionar
+    nomeItem={item.nome}
+    onClick={() => adicionarItem(item.id)}
+/>
                                     ) : (
                                         <div className={styles.stepper}>
                                             <button
                                                 className={styles.botaoStepper}
-                                                onClick={() =>
-                                                    removerItem(item.id)
-                                                }
+                                                onClick={(e) => {
+                                                    e.stopPropagation();
+
+                                                    removerItem(item.id);
+                                                }}
                                                 aria-label={`Remover ${item.nome}`}
                                             >
                                                 <Minus size={20} />
@@ -216,9 +249,11 @@ export default function Cardapio() {
                                             </span>
                                             <button
                                                 className={styles.botaoStepper}
-                                                onClick={() =>
-                                                    adicionarItem(item.id)
-                                                }
+                                                onClick={(e) => {
+                                                    e.stopPropagation();
+
+                                                    adicionarItem(item.id);
+                                                }}
                                                 aria-label={`Adicionar ${item.nome}`}
                                             >
                                                 <Plus size={20} />
@@ -237,6 +272,18 @@ export default function Cardapio() {
                     icone=""
                 />
             </section>
+
+            
+{/* modal */}
+          {itemDetalhe && (
+    <ModalDetalhesItem
+        item={itemDetalhe}
+        quantidade={carrinho[itemDetalhe.id] ?? 0}
+        adicionarItem={adicionarItem}
+        removerItem={removerItem}
+        aoFechar={() => setItemDetalhe(null)}
+    />
+)}
         </main>
     );
 }
