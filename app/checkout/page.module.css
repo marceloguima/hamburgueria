@@ -65,13 +65,14 @@
   
 }
 
-.avisoFormaPagValido{
+.avisoFormaPagValido, .avisoTroco{
   position: absolute;
   top: 433px;
-
   color: #ff0000;
- 
+}
 
+.avisoTroco{
+  top:505px
 }
 
 .botaoPagamento {

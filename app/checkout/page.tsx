@@ -273,7 +273,7 @@ ${dados.observacao.trim() !== "" ? ` *Observação:* ${dados.observacao}` : ""}
                 </fieldset>
 
                 <span className={styles.avisoFormaPagValido}>{mensagemFormaPag}</span>
-                <span className={styles.avisoFormaPagValido}>{mensagemTroco}</span>
+                <span className={styles.avisoTroco}>{mensagemTroco}</span>
 
                 {/* --- Observação opcional --- */}
                 <fieldset className={styles.grupo}>
