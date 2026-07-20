@@ -55,7 +55,7 @@
     url('/hero-cardapio.png'); /* troque pela foto real do vendedor */
   background-size: cover;
   background-position: center;
-  min-height: 60vh;
+  min-height: 46vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
