@@ -6,8 +6,8 @@
    ========================================== */
 :root {
   /* --- Cores principais --- */
-  --cor-primaria: #b80404;        /* laranja do espetinho */
-  --cor-primaria-escura: #e20f0f; /* laranja mais escuro, pra hover/active */
+  --cor-primaria: #b80404;        /* vermelho do espetinho */
+  --cor-primaria-escura: #e20f0f; /* vermelho mais escuro, pra hover/active */
   --cor-fundo: #ffffff;           /* preto de fundo */
   --cor-fundo-card: #eeeeee; /* fundo dos cards translúcidos */
   --cor-texto-claro: #292929;

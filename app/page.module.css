@@ -52,7 +52,7 @@
       rgba(0, 0, 0, 0.932) 10%,
       rgba(0, 0, 0, 0.288) 60%
     ),
-    url('/hero-cardapio.png'); /* troque pela foto real do vendedor */
+    url('/hero-cardapio.png'); 
   background-size: cover;
   background-position: center;
   min-height: 46vh;
@@ -107,7 +107,7 @@
   border-radius: var(--raio-card);
   padding: var(--espaco-sm);
   margin: 0 var(--espaco-md);
-  margin-top: -1px; /* encosta na imagem acima */
+  margin-top: -1px; 
 }
 
 .itemConfianca {

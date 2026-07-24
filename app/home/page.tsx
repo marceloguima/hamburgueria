@@ -23,11 +23,23 @@ const itens = dadosCardapio as ItemCardapio[];
 // A ORDEM dessa lista também define a prioridade da busca automática:
 // se o termo digitado aparecer em mais de uma categoria, a busca vai
 // pular pra primeira categoria dessa lista que tiver resultado.
-const categorias: { chave: ItemCardapio["categoria"]; rotulo: string }[] = [
-    { chave: "hamburgueres", rotulo: "Hamburgueres" },
-    { chave: "combos", rotulo: "Combos" },
-    { chave: "bebidas", rotulo: "Bebidas" },
-    { chave: "acompanhamentos", rotulo: "Acompanhamentos" },
+const categorias: {
+    chave: ItemCardapio["categoria"];
+    rotulo: string;
+    imagem: string;
+}[] = [
+    {
+        chave: "hamburgueres",
+        rotulo: "Hambúrguer",
+        imagem: "/categorias/hamburguer.png",
+    },
+    { chave: "bebidas", rotulo: "Bebidas", imagem: "/categorias/bebida.png" },
+    { chave: "combos", rotulo: "Combo", imagem: "/categorias/combo.png" },
+    {
+        chave: "acompanhamentos",
+        rotulo: "Extra",
+        imagem: "/categorias/extra.png",
+    },
 ];
 
 // Remove acentos e deixa tudo minúsculo, pra comparação de busca não
@@ -142,17 +154,40 @@ export default function Cardapio() {
 
             {/* Filtros de categoria */}
             <nav className={styles.filtros}>
+                {/* <h4>Categorias</h4> */}
                 {categorias.map((cat) => (
                     <button
                         key={cat.chave}
-                        className={`${styles.pillFiltro} ${
-                            categoriaAtiva === cat.chave
-                                ? styles.pillFiltroAtivo
-                                : ""
-                        }`}
+                        className={`${styles.itemCategoria} ${
+                                categoriaAtiva === cat.chave
+                                    ? styles.itemCategoriaAtivo
+                                    : ""
+                            }`}
                         onClick={() => setCategoriaAtiva(cat.chave)}
                     >
-                        {cat.rotulo}
+                        <span
+                            className={`${styles.iconeCategoria} ${
+                                categoriaAtiva === cat.chave
+                                    ? styles.iconeCategoriaAtivo
+                                    : ""
+                            }`}
+                        >
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img
+                                src={cat.imagem}
+                                alt={cat.rotulo}
+                                className={styles.imagemCategoria}
+                            />
+                        </span>
+                        <span
+                            className={`${styles.rotuloCategoria} ${
+                                categoriaAtiva === cat.chave
+                                    ? styles.rotuloCategoriaAtivo
+                                    : ""
+                            }`}
+                        >
+                            {cat.rotulo}
+                        </span>
                     </button>
                 ))}
             </nav>
@@ -224,9 +259,11 @@ export default function Cardapio() {
                                         // </button>
 
                                         <BotaoAdicionar
-    nomeItem={item.nome}
-    onClick={() => adicionarItem(item.id)}
-/>
+                                            nomeItem={item.nome}
+                                            onClick={() =>
+                                                adicionarItem(item.id)
+                                            }
+                                        />
                                     ) : (
                                         <div className={styles.stepper}>
                                             <button
@@ -273,17 +310,16 @@ export default function Cardapio() {
                 />
             </section>
 
-            
-{/* modal */}
-          {itemDetalhe && (
-    <ModalDetalhesItem
-        item={itemDetalhe}
-        quantidade={carrinho[itemDetalhe.id] ?? 0}
-        adicionarItem={adicionarItem}
-        removerItem={removerItem}
-        aoFechar={() => setItemDetalhe(null)}
-    />
-)}
+            {/* modal */}
+            {itemDetalhe && (
+                <ModalDetalhesItem
+                    item={itemDetalhe}
+                    quantidade={carrinho[itemDetalhe.id] ?? 0}
+                    adicionarItem={adicionarItem}
+                    removerItem={removerItem}
+                    aoFechar={() => setItemDetalhe(null)}
+                />
+            )}
         </main>
     );
 }
