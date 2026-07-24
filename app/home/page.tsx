@@ -8,6 +8,8 @@ import BotaoLink from "../components/BotaoLinkPrincipal/BotaoLink";
 import ModalDetalhesItem from "../components/ModalDetalhesItem/ModalDetalhesItem";
 import BotaoAdicionar from "../components/BotaoAdicionar/BotaoAdd";
 
+import {ArrowRight } from "lucide-react"
+
 // Ícones lucide
 import { Plus, Minus, Search, Menu } from "lucide-react";
 
@@ -306,7 +308,7 @@ export default function Cardapio() {
                 <BotaoLink
                     href="/carrinho"
                     titulo="Ir para carrinho"
-                    icone=""
+                    icone={<ArrowRight />}
                 />
             </section>
 

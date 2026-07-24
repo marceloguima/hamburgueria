@@ -12,6 +12,8 @@ import type { DadosCliente, FormaPagamento } from "../types/pedido";
 import dadosCardapio from "../data/cardapio.json";
 import { NUMERO_WHATSAPP_VENDEDOR, CHAVE_PIX } from "../lib/config";
 
+import {ArrowLeft } from "lucide-react"
+
 const itens = dadosCardapio as ItemCardapio[];
 
 const opcoesPagamento: {
@@ -146,9 +148,9 @@ ${dados.observacao.trim() !== "" ? ` *Observação:* ${dados.observacao}` : ""}
         <main className={styles.tela}>
             <header className={styles.cabecalho}>
                 <Link href="/carrinho" className={styles.botaoVoltar} aria-label="Voltar ao carrinho">
-                    ←
+                    <ArrowLeft />
                 </Link>
-                <h1 className={styles.titulo}>Finalizar pedido</h1>
+                <h1 className={styles.titulo}>Voltar ao carrinho</h1>
             </header>
 
             <form className={styles.formulario}>
